@@ -16,15 +16,15 @@
             //(Inheritance, Association, Aggregation, Composition, or Dependency):
 
             //a) A University has Departments. If the university is closed, the departments no longer exist.
-                   // Composition (Strong ownership — lifecycle dependent)
+            // Composition (Strong ownership — lifecycle dependent)
             //b) A Driver uses a Car.The driver does not own the car.
-                   //Association (Weak relationship — no ownership)
+            //Association (Weak relationship — no ownership)
             //c) A Dog is an Animal.
-                      // Inheritance (Is-a relationship)
+            // Inheritance (Is-a relationship)
             //d) A Team has Players. If the team is deleted, the players still exist.
-                    //Aggregation (Weak ownership — lifecycle independent)
+            //Aggregation (Weak ownership — lifecycle independent)
             //e) A method receives a Logger as a parameter and calls it inside the method only.
-                  //Dependency (Temporary relationship — method-level)
+            //Dependency (Temporary relationship — method-level)
             #endregion
 
             #region Question 2
@@ -33,15 +33,30 @@
 
             //a) A parent class has a protected field.Can a child class in a different assembly access it?
             //What about through an object instance from outside?
+
+            //A child class in a different assembly can access a protected field,
+            //but only through inheritance, not through an object instance from outside. 
+            //Protected members are accessible within the class and by derived classes, but not through instances of the class.
+
             //b) What is the difference between protected internal and private protected?
+
+            //Protected internal allows access from derived classes or any class within the same assembly,
+            //while private protected allows access only from derived classes within the same assembly.
+
             //c) What does the sealed keyword do when applied to a class? What about when applied to a method?
+
+            //When applied to a class, the sealed keyword prevents other classes from inheriting from it.
+            //When applied to a method, it prevents derived classes from overriding that method.
+
             //d) Can you create an object from a sealed class using new? Why or why not?
 
-            #endregion
+            // Yes, you can create objects normally using new. You just cannot inherit from it.
 
-            #endregion
+           #endregion
 
-            #region  Part 02 : Practical
+           #endregion
+
+                          #region  Part 02 : Practical
 
             //(Extending the Movie Ticket Booking System)
             //In Assignments 01 & 02, you built a Movie Ticket Booking System with a Ticket class,
@@ -49,7 +64,7 @@
             //composition, and sealed classes.
             //What you need to build :
 
-            #region 1. Create a base class Ticket
+                          #region 1. Create a base class Ticket
 
             //1. Create a base class Ticket with:
             //a.MovieName(string), Price(decimal, must be > 0), TicketId(int, read-only, auto-incremented).
@@ -58,9 +73,9 @@
             //d.Override ToString() to return the ticket info.
             //e.A static int GetTotalTickets() method that returns the total number of tickets created.
 
-            #endregion
+                          #endregion
 
-            #region 2. Create three child classes
+                          #region 2. Create three child classes
 
             //2. Create three child classes that inherit from Ticket:
             //a.StandardTicket — adds SeatNumber(string).
@@ -68,9 +83,9 @@
             //c.IMAXTicket — adds Is3D(bool). If true, the price increases by 30 EGP.
             //Each child class should override ToString() to include its own extra info.
 
-            #endregion
+                          #endregion
 
-            #region 3. Create a Cinema class
+                          #region 3. Create a Cinema class
 
             //3. Create a Cinema class that has a CinemaName, a Projector object (created inside Cinema),
             //and holds up to 20 tickets.Add:
@@ -79,9 +94,9 @@
             //b.PrintAllTickets() — prints all tickets.
             //c.OpenCinema() and CloseCinema() — start/stop the projector.
 
-            #endregion
+                          #endregion
 
-            #region 4. In Main
+                          #region 4. In Main
 
             //4. In Main, do the following:
             //a.Create a Cinema and open it.
@@ -89,9 +104,9 @@
             //c.Print all tickets.
             //d.Close the Cinema.
 
-            #endregion
+                          #endregion
 
-            #endregion
+                          #endregion
 
             Console.WriteLine("\n" + new string('-', 70) + "\n");
 
